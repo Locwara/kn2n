@@ -1,0 +1,122 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;500&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fce4ec; /* Soft pink background */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Heading Style */
+.tieude h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #c2185b; /* Deeper pink for contrast */
+    font-size: 3.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 0;
+}
+
+/* Container for the new content */
+.chuatg {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* The card/letter style for the message */
+.khungngoai {
+    background: #ffffff;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+/* Styling for each line of the message */
+.tg {
+    border-bottom: 1px dashed #e0e0e0;
+    padding: 15px 0;
+}
+
+.tg:last-child {
+    border-bottom: none;
+}
+
+.tg p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #555;
+    text-align: center;
+}
+
+/* Personal message card style */
+.loinhancanhan {
+    margin-top: 30px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.loinhancanhan p {
+    margin: 0 0 15px 0;
+    line-height: 1.8;
+    color: #333;
+    text-align: left;
+}
+
+.loinhancanhan .kyten { /* more specific selector */
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* --- Falling Petals Animation --- */
+#petal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.petal {
+    position: absolute;
+    top: -5%;
+    opacity: 0.9;
+    /* Two animations: one for falling, one for swaying */
+    animation: fall linear infinite, sway ease-in-out infinite alternate;
+}
+
+/* Animation for falling down */
+@keyframes fall {
+    to {
+        transform: translateY(105vh);
+        opacity: 0.3;
+    }
+}
+
+/* Animation for swaying side to side */
+@keyframes sway {
+    to {
+        transform: translateX(var(--sway-amount)) rotate(180deg);
+    }
+}
